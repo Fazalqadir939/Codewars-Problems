@@ -1,0 +1,24 @@
+                {
+                    break;
+                }
+                k--;
+                
+            }
+            if (k==2)
+            {
+                r--;
+                pri*=count;
+            }
+            else
+            {}
+            if (r==0)
+            {
+                break;
+            }
+        }
+        else
+        {}
+    }
+    count++;
+    return pri;
+}
