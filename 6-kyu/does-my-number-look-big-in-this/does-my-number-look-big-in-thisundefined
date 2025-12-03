@@ -1,0 +1,34 @@
+bool narcissistic( int value ){
+  short c =0;
+        int boo = 0;
+        for (int k = 1;k<=value;k*=10)
+        {
+            c++;
+        }
+        int power= 1;
+        int u = value;
+        for (short l =1;l<c;l++)
+        {
+            power*=10;
+        }
+        for (short k = c;k>0;k--)
+        {
+            int g =value/power;
+            value = value%power;
+            power=power/10;
+            int mul = 1;
+            for (short h = 1;h<=c;h++)
+            {
+                mul = mul*g;
+            }
+            boo+=mul;
+        }
+        if (u==boo)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
