@@ -1,0 +1,38 @@
+#include <string>
+​
+using namespace std; 
+​
+​
+bool tidyNumber (int number)
+{
+  int length=0,k=number,p,l=0,t,pow=1;do{length++;k=k/10;}while (k>0);
+    for (int i=1;i<length;i++)
+    {
+        pow*=10;
+    }
+    for (int i=1;i<=length;i++)
+    {
+         p = number/pow;
+        number=number%pow;
+        pow/=10;
+        if (p>=l)
+        {
+             t = true;
+        }
+        else
+        {
+            t=false;
+            break;
+        }
+      l=p;
+    }
+    if (t==1)
+    {
+        return true;
+    }
+  else{
+    return false;
+  }
+}
+​
+​
