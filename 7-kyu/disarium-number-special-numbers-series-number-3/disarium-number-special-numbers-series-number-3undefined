@@ -1,0 +1,33 @@
+#include <string>
+​
+using namespace std; 
+​
+string disariumNumber (int number )
+{
+int sum=  0;
+    int r=number;
+    int length=0,l=number,pow=1;do{length++;l/=10;pow*=10;}while (l>0);
+    pow/=10;
+    int j =1;
+    for (int i = 0;i<length;i++)
+    {
+        int k = number/pow;
+        number=number%pow;
+        int mul=1;
+        for (int e = 1;e<=j;e++)
+        {
+            mul*=k;
+        }
+        j++;
+        sum+=mul;
+        pow/=10;
+    }
+    if (sum==r)
+    {
+        return "Disarium !!";
+    }
+    else
+    {
+        return "Not !!";
+    }
+}
