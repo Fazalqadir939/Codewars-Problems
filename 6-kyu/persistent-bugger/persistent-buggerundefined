@@ -1,17 +1,32 @@
 int persistence(long long n){
-  if (n <10)
-  {
-    return 0;
-  }
-  int counter = 0;
-  int sum = 1;
-  while(n !=0 )
-  {
-    sum *= n%10;
-    n /= 10;
-  }
-  counter++;
-  if(sum>9)
-  return counter += persistence(sum);
-  return counter;
+ int l=n;
+    int mul_time=0;
+    int mul;
+    if (n<10)
+    {
+        return 0;
+    }
+    else{
+        do
+        {
+            int length=0;
+            mul=1;
+            int pow=1;
+            do{length++;pow*=10;l/=10;}while (l>0); pow/=10;
+​
+            for (int i=1;i<=length;i++)
+            {
+                int k = n/pow;
+                n=n%pow;
+                mul*=k;
+                //cout << "n"<<mul<<endl;
+                pow/=10;
+​
+            }
+            mul_time++;
+            n=mul;
+            l=mul;
+        }while (n>9);
+        return mul_time;
+    }
 }
