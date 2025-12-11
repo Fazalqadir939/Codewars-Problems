@@ -1,0 +1,6 @@
+#include <string>
+using namespace std;
+// Write a function "greet" that returns "hello world!" of type std::string
+ string greet(){
+  return "hello world!";
+}
