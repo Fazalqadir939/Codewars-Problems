@@ -1,0 +1,23 @@
+int lateRide(int n) {
+  int k = n/60;
+    n=n%60;
+    int sum1=0,sum2=0,sum=0;
+    int length1=0,l1=k,pow1=1;do{length1++;l1/=10;pow1*=10;}while (l1>0);pow1/=10;
+    int length2=0,l2=n,pow2=1;do{length2++;l2/=10;pow2*=10;}while (l2>0);pow2/=10;
+    for (int i = 0;i<length1;i++)
+    {
+        int j = k/pow1;
+        k=k%pow1;
+        pow1/=10;
+        sum1+=j;
+    }
+    for (int i = 0;i<length2;i++)
+    {
+        int j = n/pow2;
+        n=n%pow2;
+        pow2/=10;
+        sum2+=j;
+    }
+    sum=sum1+sum2;
+    return sum;
+}
