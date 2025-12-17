@@ -1,0 +1,40 @@
+    }
+   // string original = "DeathCubeK";
+    int length1=0;do{length1++;}while (original[length1]!='\0');
+    for (int i = 0;i<length1;i++)
+    {
+        if (original[i]>='A'&&original[i]<='Z')
+        {
+            original[i]=original[i]+32;
+        }
+        else
+        {
+            original[i]=original[i];
+        }
+    }
+    for (int j =0;j<length1;j++)
+    {
+        for (int i =0;i<length1-1;i++)
+        {
+            if (original[i]>original[i+1])
+            {
+                char temp1 = original[i + 1];
+                char temp2 = original[i];
+                original[i+1]=temp2;
+                original[i]=temp1;
+            }
+            else
+            {
+                original[i]=original[i];
+            }
+        }
+    }
+    if (test==original)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
